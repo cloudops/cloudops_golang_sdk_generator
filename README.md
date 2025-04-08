@@ -21,6 +21,8 @@ $ make setup
 
 ## Generating the SDK
 
+**NOTE:** You will need to ensure the `github_handle` and `endpoint` are set correctly in the `Makefile`.  The `github_handle` is used when generating the package import url.
+
 In order to generate the SDK, you need to pull down the spec files.
 
 ```bash
@@ -62,6 +64,8 @@ The SDK is not tracked as an official release (yet), so you will need to referen
 You will need to establish both a package location as well as the path reference to it (assuming you don't track the SDK in github publicly).
 
 In this case, I will only reference the `cmc_core` package and I will reference it as `github.com/swill/cmc_core`.
+
+To change the github handle to something other than `swill`, be sure to set the `github_handle` variable appropriately in the `Makefile`.
 
 In your `go.mod` file, add the following reference:
 
