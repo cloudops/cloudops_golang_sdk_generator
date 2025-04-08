@@ -1,7 +1,7 @@
-CloudMC SDK Generation
-----------------------
+CloudOps SDK Generation
+-----------------------
 
-The included `Makefile` is a convenience function for generating the CloudMC Golang SDK via the OpenAPI specification.
+The included `Makefile` is a convenience function for generating the CloudOps Software Golang SDK via the OpenAPI specification.
 
 ## Initial Setup
 
