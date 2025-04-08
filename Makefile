@@ -7,6 +7,7 @@ SHELL = /bin/bash
 
 .DEFAULT_GOAL := all
 
+github_handle = swill
 endpoint = https://portal.cloudmc.io
 # endpoint = https://portal.dev.cloudmc.io
 
@@ -24,10 +25,10 @@ curl:
 	curl -o ./api_specs/vcd_openapi.json $(endpoint)/rest/docs/vmware-cloud-director/api/v3/openapi.json
 
 generate:
-	/opt/homebrew/bin/openapi-generator generate --package-name cmc_core -i ./api_specs/core_openapi.json -g go -o ./sdk_out/cmc_core/ &> ./logs/core_output.log; \
-	/opt/homebrew/bin/openapi-generator generate --package-name cmc_aws -i ./api_specs/aws_openapi.json -g go -o ./sdk_out/cmc_aws/ &> ./logs/aws_output.log; \
-	/opt/homebrew/bin/openapi-generator generate --package-name cmc_azure -i ./api_specs/azure_openapi.json -g go -o ./sdk_out/cmc_azure/ &> ./logs/azure_output.log; \
-	/opt/homebrew/bin/openapi-generator generate --package-name cmc_vcd -i ./api_specs/vcd_openapi.json -g go -o ./sdk_out/cmc_vcd/ &> ./logs/vcd_output.log
+	/opt/homebrew/bin/openapi-generator generate --git-user-id $(github_handle) --git-repo-id cmc_core --package-name cmc_core -i ./api_specs/core_openapi.json -g go -o ./sdk_out/cmc_core/ &> ./logs/core_output.log; \
+	/opt/homebrew/bin/openapi-generator generate --git-user-id $(github_handle) --git-repo-id cmc_aws --package-name cmc_aws -i ./api_specs/aws_openapi.json -g go -o ./sdk_out/cmc_aws/ &> ./logs/aws_output.log; \
+	/opt/homebrew/bin/openapi-generator generate --git-user-id $(github_handle) --git-repo-id cmc_azure --package-name cmc_azure -i ./api_specs/azure_openapi.json -g go -o ./sdk_out/cmc_azure/ &> ./logs/azure_output.log; \
+	/opt/homebrew/bin/openapi-generator generate --git-user-id $(github_handle) --git-repo-id cmc_vcd --package-name cmc_vcd -i ./api_specs/vcd_openapi.json -g go -o ./sdk_out/cmc_vcd/ &> ./logs/vcd_output.log
 
 reset:
 	rm -rf ./logs/*; \
