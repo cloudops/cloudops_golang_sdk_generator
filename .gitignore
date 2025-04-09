@@ -1,3 +1,4 @@
 logs/*
-api_specs/*
-sdk_out/*
+api_specs*/*
+sdk_out*/*
+*.env

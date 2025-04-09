@@ -11,7 +11,12 @@ First, you need to install the `openapi-generator`.  In order for this `Makefile
 $ brew install openapi-generator
 ```
 
-Now that the `openapi-generator` is installed, you need to setup the folder structure.
+Now that the `openapi-generator` is installed, you need to setup the variables and the folder structure.
+
+```bash
+$ cp variables.env.sample variables.env
+```
+> Make sure to configure the variables in `variables.env` to match your configuration.
 
 ```bash
 $ make setup
@@ -39,9 +44,21 @@ $ make
 
 > The folder `./sdk_out` will be populated with SDKs and the `./logs` folder will have the corresponding logs.
 
-## Reset & Regenerate
+## Backup Folders
+
+You may want to pull down a newer version of the specs and generate a new SDK.  If you have a working configuration, you might want to backup your existing configuration so you have something to rollback to if something goes wrong.
+
+```bash
+make backup
+```
+
+> Backups up the `./api_specs` and `./sdk_out` folders, and recreates the empty target folders.
+
+## Reset Folders
 
 You may choose to pull down newer specs or regenerate the SDK, before you do that you will want to clean up the existing directories.
+
+> **NOTE:** The following commands will delete existing data.  You may want to use `make backup` instead if you have a working environment today.
 
 To cleanup the `./logs` and `./sdk_out` folders.
 
