@@ -80,18 +80,18 @@ The SDK is not tracked as an official release (yet), so you will need to referen
 
 You will need to establish both a package location as well as the path reference to it (assuming you don't track the SDK in github publicly).
 
-In this case, I will only reference the `cmc_core` package and I will reference it as `github.com/swill/cmc_core`.
+In this case, I will only reference the `cmc_core` package and I will reference it as `github.com/cloudops/cmc_core`.
 
-To change the github handle to something other than `swill`, be sure to set the `github_handle` variable appropriately in the `Makefile`.
+To change the github handle to something other than `cloudops`, be sure to set the `github_handle` variable appropriately in the `Makefile`.
 
 In your `go.mod` file, add the following reference:
 
 ```
 require (
-	github.com/swill/cmc_core v0.0.0
+	github.com/cloudops/cmc_core v0.0.0
 )
 
-replace github.com/swill/cmc_core => /path/to/sdk_out/cmc_core
+replace github.com/cloudops/cmc_core => /path/to/sdk_out/cmc_core
 ```
 
-> Establishes the import of `github.com/swill/cmc_core` and sets the reference to be the local directory.
+> Establishes the import of `github.com/cloudops/cmc_core` and sets the reference to be the local directory.
