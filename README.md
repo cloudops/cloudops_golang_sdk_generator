@@ -31,18 +31,22 @@ $ make setup
 In order to generate the SDK, you need to pull down the spec files.
 
 ```bash
-$ make curl
+$ make curl_all
 ```
 
-> The folder `./api_specs` will be populated with spec files.
+> The folder `./api_specs` will be populated with spec files.  
+> You can curl specific specs with the following commands: `curl_core`, `curl_aws`, `curl_azure`, `curl_vcd`, `curl_acs`
 
 Now that you have the spec files, you need to generate the SDK output from the spec files.
 
 ```bash
-$ make
+$ make generate_all
 ```
 
-> The folder `./sdk_out` will be populated with SDKs and the `./logs` folder will have the corresponding logs.
+*The default `make` command is mapped to this command*
+
+> The folder `./sdk_out` will be populated with SDKs and the `./logs` folder will have the corresponding logs.  
+> You can populate specific SDKs with the following commands: `generate_core`, `generate_aws`, `generate_azure`, `generate_vcd`, `generate_acs`
 
 ## Backup Folders
 
