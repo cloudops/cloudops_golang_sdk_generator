@@ -1,4 +1,4 @@
-.PHONY: all setup curl generate reset reset_spec
+.PHONY: all setup curl generate curl_core curl_aws curl_azure curl_vcd curl_acs generate_core generate_aws generate_azure generate_vcd generate_acs reset reset_spec
 
 .ONESHELL:
 .SHELLFLAGS = -ec
@@ -11,15 +11,15 @@ include variables.env
 
 DATE := $(shell date '+%Y-%m-%d-%H-%M-%S')
 
-all: generate_all
+all: generate
 
 setup:
 	mkdir ./api_specs; \
 	mkdir ./logs; \
 	mkdir ./sdk_out
 
-curl_all: curl_core curl_aws curl_azure curl_vcd curl_acs
-generate_all: generate_core generate_aws generate_azure generate_vcd generate_acs
+curl: curl_core curl_aws curl_azure curl_vcd curl_acs
+generate: generate_core generate_aws generate_azure generate_vcd generate_acs
 
 curl_core:
 	curl -o ./api_specs/core_openapi.json $(ENDPOINT)/rest/docs/api/v3/openapi.json

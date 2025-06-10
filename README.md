@@ -31,7 +31,7 @@ $ make setup
 In order to generate the SDK, you need to pull down the spec files.
 
 ```bash
-$ make curl_all
+$ make curl
 ```
 
 > The folder `./api_specs` will be populated with spec files.  
@@ -40,7 +40,7 @@ $ make curl_all
 Now that you have the spec files, you need to generate the SDK output from the spec files.
 
 ```bash
-$ make generate_all
+$ make generate
 ```
 
 *The default `make` command is mapped to this command*
