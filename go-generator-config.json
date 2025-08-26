@@ -1,0 +1,7 @@
+{
+  "enumClassPrefix": true,
+  "withSeparateModelsAndApi": true,
+  "modelPackage": "models",
+  "apiPackage": "apis",
+  "generateInterfaces": true
+}
