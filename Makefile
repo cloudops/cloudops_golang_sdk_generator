@@ -66,7 +66,7 @@ generate_core:
 	$(call inline-lifter,core)
 	$(GENERATOR_PATH)openapi-generator generate \
 	  -g go \
-	  -i ./api_specs/core_openapi.json \
+	  -i ./api_specs/core_openapi_lifted.json \
 	  -o ./sdk_out/cmc_core/ \
 	  -c $(CONFIG_FILE) \
 	  --git-user-id $(GITHUB_HANDLE) \
@@ -81,7 +81,7 @@ generate_aws:
 	$(call inline-lifter,aws)
 	$(GENERATOR_PATH)openapi-generator generate \
 	  -g go \
-	  -i ./api_specs/aws_openapi.json \
+	  -i ./api_specs/aws_openapi_lifted.json \
 	  -o ./sdk_out/cmc_aws/ \
 	  -c $(CONFIG_FILE) \
 	  --git-user-id $(GITHUB_HANDLE) \
@@ -96,7 +96,7 @@ generate_azure:
 	$(call inline-lifter,azure)
 	$(GENERATOR_PATH)openapi-generator generate \
 	  -g go \
-	  -i ./api_specs/azure_openapi.json \
+	  -i ./api_specs/azure_openapi_lifted.json \
 	  -o ./sdk_out/cmc_azure/ \
 	  -c $(CONFIG_FILE) \
 	  --git-user-id $(GITHUB_HANDLE) \
@@ -111,7 +111,7 @@ generate_vcd:
 	$(call inline-lifter,vcd)
 	$(GENERATOR_PATH)openapi-generator generate \
 	  -g go \
-	  -i ./api_specs/vcd_openapi.json \
+	  -i ./api_specs/vcd_openapi_lifted.json \
 	  -o ./sdk_out/cmc_vcd/ \
 	  -c $(CONFIG_FILE) \
 	  --git-user-id $(GITHUB_HANDLE) \
@@ -126,7 +126,7 @@ generate_acs:
 	$(call inline-lifter,acs)
 	$(GENERATOR_PATH)openapi-generator generate \
 	  -g go \
-	  -i ./api_specs/acs_openapi.json \
+	  -i ./api_specs/acs_openapi_lifted.json \
 	  -o ./sdk_out/cmc_acs/ \
 	  -c $(CONFIG_FILE) \
 	  --git-user-id $(GITHUB_HANDLE) \
